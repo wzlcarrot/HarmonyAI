@@ -1,0 +1,165 @@
+@forward 'element-plus/theme-chalk/src/common/var.scss' with ($colors: ('primary': ('base': #5540A0,
+        ),
+    ));
+@use "element-plus/theme-chalk/src/index.scss" as *;
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bgColor);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #718096;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A0AEC0;
+}
+
+:root {
+    --text: #495057;     /* 深灰色文字，在浅色背景上更易读 */
+    --HiText: #6c757d;   /* 次要文字颜色，稍浅一点 */
+    --activeText: #5540A0; /* 激活状态文字颜色 */
+    --whiteText: #f8f9fa; /* 原本白色的文字改为浅灰色 */
+    --purple: #AD44F4;
+    --btnBg: linear-gradient(135deg, #5540A0, #7E57C2);
+    --btnShadow: 0 5px 15px rgba(85, 64, 160, 0.2);
+    --bgColor: #e9ecef;   /* 再稍微深一点的浅灰色背景 */
+    --cardBg: #f8f9fa;    /* 浅灰色卡片背景 */
+    --borderColor: #ced4da; /* 再稍微深一点的浅灰色边框 */
+}
+
+//去除下拉菜单 黑边
+.el-tooltip__trigger:focus-visible {
+    outline: unset;
+}
+
+body {
+    background: var(--bgColor);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.a-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #0471FF;
+}
+
+//重写tab
+.my-tab {
+    .el-tabs__nav-wrap {
+        &::after {
+            background: none;
+        }
+    }
+
+    .el-tabs__header {
+        margin: 0px;
+    }
+}
+
+//重写 收起展开
+.my-collapse {
+    .el-collapse-item__content {
+        padding-bottom: 0px;
+    }
+
+    .el-collapse-item__wrap,
+    .el-collapse,
+    .el-collapse-item__header {
+        border-bottom: none;
+    }
+}
+
+.el-message-box {
+    -webkit-app-region: no-drag;
+}
+
+.top-panel {
+    .el-form-item {
+        margin-bottom: 0px;
+    }
+
+    .second-row {
+        margin-top: 5px;
+    }
+}
+
+.volume-popover {
+    min-width: 0px !important;
+    padding: 20px 0px !important;
+    background: var(--cardBg) !important;
+    border: 1px solid var(--borderColor) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    .el-slider.is-vertical .el-slider__runway {
+        width: 2px;
+    }
+
+    .el-slider.is-vertical .el-slider__bar {
+        width: 2px;
+    }
+
+    .el-slider.is-vertical .el-slider__button-wrapper {
+        left: -17px;
+    }
+
+    .el-slider__button {
+        background: var(--activeText);
+        border: none;
+        height: 10px;
+        width: 10px;
+    }
+
+    .el-slider__bar {
+        background: var(--activeText);
+    }
+}
+
+.el-popper {
+    padding: 0px 5px;
+    line-height: normal;
+}
+
+.left-side-header {
+    background: var(--cardBg);
+    margin-bottom: 0px;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+
+.left-side-body {
+    background: var(--cardBg);
+    padding: 0px;
+}
+
+//用户信息弹出框
+.user-info-popper {
+    padding: 0px !important;
+    border: 1px solid var(--borderColor) !important;
+    background: var(--cardBg) !important;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    .menu-item {
+        padding: 10px;
+        color: var(--text);
+        cursor: pointer;
+
+        &:hover {
+            background: var(--bgColor);
+        }
+    }
+}
